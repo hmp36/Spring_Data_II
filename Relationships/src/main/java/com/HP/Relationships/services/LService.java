@@ -11,7 +11,8 @@ import com.HP.Relationships.repositories.Repo2;
 
 @Service
 public class LService {
-	
+	public long num =0;
+			
 	private Repo2 repo;
 	
 	public LService(Repo2 repo) {
@@ -28,9 +29,9 @@ public class LService {
 	
 	@Transactional
 	public void addLicense(License license) {
-		Long personId = ((License) license.getPerson()).getId();
-		String licNum = String.format("%06d", personId);
-		license.setNumber(licNum);
+		num+=1;
+		String number = Long.toString(num);
+		license.setNumber(number);
 		repo.save(license);
 	}
 

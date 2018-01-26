@@ -24,10 +24,10 @@ pageEncoding="UTF-8"%>
 	<p>&nbsp;</p>
 	<h3>${person.firstName} ${person.lastName}</h3>
 
-	<p>License Number: ${license.number}</p>
-	<p>State: ${license.state}</p>
+	<p>License Number: ${person.license.number}</p>
+	<p>State: ${person.license.state}</p>
 	<p>Expiration Date: <fmt:formatDate pattern = "MM/dd/yyyy" 
-         value="${license.expiration}"/></p>
+         value="${person.license.expiration_date}"/></p>
 
 </div>
 <div class="col-sm-4"></div>

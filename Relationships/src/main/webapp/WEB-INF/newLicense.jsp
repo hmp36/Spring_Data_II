@@ -43,9 +43,9 @@ pageEncoding="UTF-8"%>
 		</form:label>
 		</p>
 		<p>
-		<form:label path="expiration">Expiration Date<br>
-		<form:input path="expiration" type="date"/><br>
-		<small style=color:red><form:errors path="expiration"/></small>
+		<form:label path="expiration_date">Expiration_Date<br>
+		<form:input path="expiration_date" type="date"/><br>
+		<small style=color:red><form:errors path="expiration_date"/></small>
 		</form:label>
 		</p>
 		<p><input class="btn btn-primary" type="submit" value="Add License"/></p>

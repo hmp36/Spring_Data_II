@@ -26,9 +26,12 @@ public class main {
 		this.pservice = pservice;
 		this.lservice = lservice;
 	}
-	
 
-	
+	@RequestMapping("/")
+	public String root(@ModelAttribute("person") Person person) {
+	return "newPerson";
+
+}
 	@RequestMapping("/persons/new")
 	public String newPerson(@ModelAttribute("person") Person person) {
 		System.out.println("hello");
@@ -51,7 +54,7 @@ public class main {
 	@RequestMapping("persons/{id}")
 	public String getPerson(Model model, @PathVariable("id") Long id) {
 		model.addAttribute("person", pservice.getPerson(id));
-		model.addAttribute("license", lservice.getLicense(id));
+		
 		return "person";
 	}
 	
@@ -65,7 +68,7 @@ public class main {
 		return "newLicense";
 	}
 	
-	@PostMapping("licenses/new")
+	@PostMapping("/licenses/new")
 	public String addLicense(
 		@Valid @ModelAttribute("license") License license,
 		BindingResult res, Model model) {

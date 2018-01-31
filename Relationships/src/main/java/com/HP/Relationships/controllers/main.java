@@ -32,7 +32,9 @@ public class main {
 	return "newPerson";
 
 }
+	
 	@RequestMapping("/persons/new")
+	
 	public String newPerson(@ModelAttribute("person") Person person) {
 		System.out.println("hello");
 		return "newPerson";
